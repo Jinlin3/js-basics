@@ -20,7 +20,7 @@ console.log(interestRate);
 let name = 'JJ'; // String Literal
 let age = 30; // Number Literal
 let isApproved = false; // Boolean Literal
-firstName = undefined; // undefined
+let size = undefined; // undefined
 let selectedColor = null; // null
 
 // Static Languages - type of variables are set when declared and cannot be changed in the future
@@ -61,3 +61,12 @@ function greet(name, lastName) {
 
 greet('JJ', 'Lin');
 greet('Itai', 'Mackavitch');
+
+// Calculates a value
+function square(number) {
+  return number * number;
+}
+
+let number = square(2);
+console.log(number);
+console.log(square(2));
