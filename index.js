@@ -45,3 +45,11 @@ console.log(person.name);
 let selection = 'name';
 person[selection] = 'Christian';
 console.log(person[selection]);
+
+// Arrays
+// Array length is dynamic
+// Arrays can store different types
+let selectedColors = ['red', 'blue'];
+selectedColors[2] = 1;
+console.log(selectedColors.length);
+console.log(selectedColors[0]);
