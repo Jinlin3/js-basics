@@ -70,3 +70,26 @@ function square(number) {
 let number = square(2);
 console.log(number);
 console.log(square(2));
+
+// Loops
+for (let i = 1; i <= 3; i++) {
+  if (i == 1) {
+    console.log(i + ' loop');
+  } else {
+    console.log(i + ' loops');
+  }
+}
+
+// Arrow Functions
+
+function sum(a, b) {
+  return a + b;
+}
+
+// Convert sum to an arrow function
+
+const sum2 = (a, b) => a + b;
+console.log(sum2(2, 3));
+
+const isPositive = number => number >= 0;
+console.log(isPositive(-1));
