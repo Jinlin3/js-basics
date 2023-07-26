@@ -28,7 +28,6 @@ let selectedColor = null; // null
 
 // Reference Types : Objects/Arrays/Functions
 // Objects:
-
 let person = {
   name: 'Itai',
   age: 20
@@ -53,3 +52,12 @@ let selectedColors = ['red', 'blue'];
 selectedColors[2] = 1;
 console.log(selectedColors.length);
 console.log(selectedColors[0]);
+
+// Functions
+// name = parameter; 'JJ' = argument
+function greet(name, lastName) {
+  console.log('Hello ' + name + ' ' + lastName);
+}
+
+greet('JJ', 'Lin');
+greet('Itai', 'Mackavitch');
