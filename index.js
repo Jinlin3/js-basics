@@ -10,3 +10,9 @@ console.log(name);
 
 let firstName = 'JJ';
 let lastName = 'Lin';
+
+// const means constant, the variable cannot be changed
+// if the variable needs to be changed use let instead
+
+const interestRate = 0.3;
+console.log(interestRate);
