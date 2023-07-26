@@ -1,7 +1,3 @@
-
-let name = 'Jack';
-console.log(name);
-
 // Cannot be a reserved keyword
 // Should be meaningful
 // Cannot start with a number
@@ -19,8 +15,11 @@ console.log(interestRate);
 
 // Everything below are primitive types
 
-name = 'JJ'; // String Literal
+let name = 'JJ'; // String Literal
 let age = 30; // Number Literal
 let isApproved = false; // Boolean Literal
 firstName = undefined;
 let selectedColor = null;
+
+// Static Languages - type of variables are set when declared and cannot be changed in the future
+// Dynamic Languages (JS) - type of variables can change at runtime
