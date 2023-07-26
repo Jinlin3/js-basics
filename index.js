@@ -16,3 +16,11 @@ let lastName = 'Lin';
 
 const interestRate = 0.3;
 console.log(interestRate);
+
+// Everything below are primitive types
+
+name = 'JJ'; // String Literal
+let age = 30; // Number Literal
+let isApproved = false; // Boolean Literal
+firstName = undefined;
+let selectedColor = null;
