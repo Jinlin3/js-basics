@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <style>
+      body {
+        background-color: darkgray;
+      }
+    </style>
+  </head>
+  <body> 
+    <script>
+      // below is a JS Object
+      const product2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day',
+        color: 'gray',
+        fun: function function1() {
+          console.log('function inside object');
+        }
+      };
+
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      console.log(product2['delivery-time']);
+
+      // -- JSON --
+      // below converts JS Object --> JSON Object (String)
+
+      JSON.stringify(product2);
+      const jsonString = JSON.stringify(product2);
+
+      // below converts JSON Object --> JS Object
+
+      JSON.parse(jsonString);
+
+      // -- Local Storage --
+      // only supports strings
+
+      localStorage.setItem('message', 'hello');
+
+    </script>
+  </body>
+</html>

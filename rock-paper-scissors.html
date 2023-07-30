@@ -27,10 +27,13 @@
     ">Reset Score</button>
 
     <script>
-      const score = {
+      // attempts to fill score from local storage
+      // || is a default operator
+      let score = JSON.parse(localStorage.getItem
+      ('score')) || {
         wins: 0,
-        ties: 0,
-        losses: 0
+        losses: 0,
+        ties: 0
       };
 
       function pickComputerMove() {
@@ -46,7 +49,7 @@
         return cpuMove;
       }
 
-      // Picks CPU Move, compares it with player move, and then prints the result
+      // picks CPU Move, compares it with player move, and then prints the result
       function playGame(playerMove) {
         const cpuMove = pickComputerMove();
         let result;
@@ -86,6 +89,8 @@
           score.losses++;
         }
 
+        localStorage.setItem('score', JSON.stringify(score));
+
         alert(`You picked ${playerMove}. Computer picked ${cpuMove}. ${result}
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
       }
@@ -94,6 +99,7 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
         score.wins = 0;
         score.losses = 0;
         score.ties = 0;
+        localStorage.removeItem('score');
       }
     </script>
   </body>
