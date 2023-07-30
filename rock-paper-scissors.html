@@ -22,7 +22,17 @@
       playGame('scissors');
     ">Scissors</button>
 
+    <button onclick="
+      resetScore();
+    ">Reset Score</button>
+
     <script>
+      const score = {
+        wins: 0,
+        ties: 0,
+        losses: 0
+      };
+
       function pickComputerMove() {
         const randomNumber = Math.random();
         let cpuMove;
@@ -62,12 +72,28 @@
           if (cpuMove === 'rock') {
             result = 'You Lose.';
           } else if (cpuMove === 'paper') {
-            result = 'You win.';
+            result = 'You Win.';
           } else if (cpuMove === 'scissors') {
             result = 'It\'s a tie!';
           }
         }
-        alert(`You picked ${playerMove}. Computer picked ${cpuMove}. ${result}`);
+
+        if (result === 'You Win.') {
+          score.wins++;
+        } else if (result === 'It\'s a tie!') {
+          score.ties++;
+        } else {
+          score.losses++;
+        }
+
+        alert(`You picked ${playerMove}. Computer picked ${cpuMove}. ${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+      }
+
+      function resetScore() {
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
       }
     </script>
   </body>
