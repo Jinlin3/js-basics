@@ -22,6 +22,10 @@
       playGame('scissors');
     ">Scissors</button>
 
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
     <button onclick="
       resetScore();
     ">Reset Score</button>
@@ -35,6 +39,8 @@
         losses: 0,
         ties: 0
       };
+
+      updateScoreElement();
 
       function pickComputerMove() {
         const randomNumber = Math.random();
@@ -90,9 +96,9 @@
         }
 
         localStorage.setItem('score', JSON.stringify(score));
-
-        alert(`You picked ${playerMove}. Computer picked ${cpuMove}. ${result}
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+        updateScoreElement();
+        updateResultElement(result);
+        updateMovesElement(playerMove, cpuMove);
       }
 
       function resetScore() {
@@ -100,6 +106,34 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
         score.losses = 0;
         score.ties = 0;
         localStorage.removeItem('score');
+        updateScoreElement();
+        updateResultElement();
+        updateMovesElement();
+      }
+
+      function updateScoreElement() {
+        document.querySelector('.js-score')
+          .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      }
+
+      function updateResultElement(result) {
+        if (!result) {
+          document.querySelector('.js-result')
+            .innerHTML = '';
+          return;
+        }
+        document.querySelector('.js-result')
+          .innerHTML = result;
+      }
+
+      function updateMovesElement(playerMove, cpuMove) {
+        if (!playerMove) {
+          document.querySelector('.js-moves')
+            .innerHTML = '';
+            return;
+        }
+        document.querySelector('.js-moves')
+          .innerHTML = `<strong>You</strong> ${playerMove} - ${cpuMove} <strong>Computer</strong>`;
       }
     </script>
   </body>
